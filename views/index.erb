@@ -51,15 +51,14 @@
 <h2>Voici les liens ajoutés : </h2>
 <% @lien.each do |liens| %>
 	<div class="Liens">
-		<ol>
-			<div class="url">Adresse du site :<a href="<%= liens.url %>" target="_blank"> <%= liens.description %></a></div>
-			<div class="description">Description du site :<%= liens.description %> </div>
+		<div class="url">Adresse du site :<a href="<%= liens.url %>" target="_blank"> <%= liens.description %></a></div>
+		<div class="description">Description du site :<%= liens.description %> </div>
 			
-			<!--<div class="domaine">Domaine :<%= liens.domaine %> </div> -->
+		<!--<div class="domaine">Domaine :<%= liens.domaine %> </div> -->
 						
- 			<a href="<%= liens.id %> ">Supprimer</a>
+ 		<a href="<%= liens.id %> ">Supprimer</a>
  						
- 			<a href="<%= liens.id %> ">Modifier</a>
+ 		<a href="<%= liens.id %> ">Modifier</a>
 
 
 	</div>	
