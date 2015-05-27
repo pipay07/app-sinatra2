@@ -1,0 +1,42 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	background-color: pink;
+}
+
+
+
+.background{
+	position: absolute;
+	top: 0;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	margin: 0;
+  	padding: 0;
+	background-image: url(../images/fond-nuages.jpg);
+	background-size: cover;
+}
+
+
+
+h1{
+	color:blue;
+	text-align: center;
+}
+
+
+#formulaires{
+	background-color: yellow;
+	margin-left: auto;
+ 	margin-right: auto;
+}
+
+.bouton{
+	list-style: none;
+}
