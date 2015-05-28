@@ -2,21 +2,25 @@
 <div class="lien-app">
 	<form class="1" action="/" method="post" accept-charset="utf-8">
 		<input type="text" name="liens[url]" placeholder="insérer votre lien">
-		<input type="submit" value="Valider">
-		<br>
-		Ajouter une description :
-		<textarea name="liens[description]" placeholder="description du site"> </textarea>
-		<input type="submit" value="Valider">
+	
 		<br>
 		
+		<textarea name="liens[description]" value="ajouter une description">ajouter une description (par défaut)</textarea>
+	
+		<br>
+		<input type="submit" value="Valider">
 
 	</form>
 
-	<!-- 
+	
 	<form class="bouton"> 
 	Domaine : 
 	<br>
-		<input type="radio" name="domaine" value="oui" checked>Frontend
+		
+		Frontend: <input type="checkbox" name="profil" value="frontend"/><br />
+
+		Backend: <input type="checkbox" name="profil" value="backend"  /><br /> 
+
 		<ul>
 				<li class="bouton"
 					<form>
@@ -27,10 +31,11 @@
 							<option value="outils"  >Scss
 							<option value="Jaune"> ...
 						</select>
+					<input type="submit" value="Valider">
 					</form>
 				</li>
 		</ul>
-		<input type="radio" name="domaine" value="non">Backend
+	
 			<ul>
 				<li class="bouton">
 					<form>
@@ -41,24 +46,31 @@
 							<option value="outils"  >Rails
 							<option value="Jaune">Dojos
 						</select>
+					<input type="submit" value="Valider">
 					</form>
-			</ul>
-	</form> -->
+		</ul>
+	</form> 
 	
 </div>
 
 	<hr>
 <h2>Voici les liens ajoutés : </h2>
-<% @lien.each do |liens| %>
+	<hr>
+<% @liens.each do |liens| %>
 	<div class="Liens">
-		<div class="url">Adresse du site :<a href="<%= liens.url %>" target="_blank"> <%= liens.description %></a></div>
+		<div class="url">Adresse du site :<a href="<%= liens.url %>" target="_blank"> <%= liens.nom %></a></div>
 		<div class="description">Description du site :<%= liens.description %> </div>
 			
-		<!--<div class="domaine">Domaine :<%= liens.domaine %> </div> -->
+		<div class="domaine">Domaine :<%= liens.domaine %> </div>
 						
- 		<a href="<%= liens.id %> ">Supprimer</a>
- 						
- 		<a href="<%= liens.id %> ">Modifier</a>
+ 		<form id="edit-liens<%= liens.id %>" action="/<%= liens.id %>" method="post">
+			<input type="hidden" name="_method" value="put">
+			<input type="submit" id="task-edit-<%= liens.id %>" value="Edit">
+		</form>
+		<form id="delete-liens<%= liens.id %>" action="/<%= liens.id %>" method="post">
+				<input type="hidden" name="_method" value="delete">
+				<input type="submit" value="Delete">
+		</form>
 
 
 	</div>	
