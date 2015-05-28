@@ -10,26 +10,26 @@ class Lien < ActiveRecord::Base
 end
 
 get '/' do 
-	@liens = Lien.all.order("created_at DESC")
-	erb :index	
+ @liens = Lien.all.order("created_at DESC")
+ erb :index	
 end
 
 
 post '/' do 
-	@liens = Lien.new(params[:liens]) 
-	@liens.save
-	redirect '/'
+ @liens = Lien.new(params[:liens]) 
+ @liens.save
+ redirect '/'
 end
 
 
 delete "/:id" do
-  @liens = Lien.find(params[:id])
-  @liens.destroy
-  redirect "/"
+ @liens = Lien.find(params[:id])
+ @liens.destroy
+ redirect "/"
 end 
 
 put "/:id" do
-	@liens = Lien.find(params[:id])
-	@liens.update(params[:liens])
-	redirect "/"
+ @liens = Lien.find(params[:id])
+ @liens.update(params[:liens])
+ redirect "/"
 end
