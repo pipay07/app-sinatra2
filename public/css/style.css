@@ -10,9 +10,14 @@ body{
 }
 
 
+.lien_app{
+ z-index: 2;
+}
 
 .background{
-	position: absolute;
+	opacity: 0.8;
+    z-index: -1;
+   	position: absolute;
 	top: 0;
   	bottom: 0;
   	left: 0;
@@ -25,10 +30,11 @@ body{
 
 
 
-h1{
+h1, h2{
 	color:blue;
 	text-align: center;
 }
+
 
 
 #formulaires{
